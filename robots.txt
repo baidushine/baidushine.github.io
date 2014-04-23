@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://baidushine.github.io/sitemap.xml 
+Sitemap: http://shineli.com/sitemap.xml 
