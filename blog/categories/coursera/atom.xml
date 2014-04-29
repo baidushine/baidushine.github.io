@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Coursera | Shine's Blog]]></title>
+  <link href="http://shineli.com/blog/categories/coursera/atom.xml" rel="self"/>
+  <link href="http://shineli.com/"/>
+  <updated>2014-04-29T18:03:50+08:00</updated>
+  <id>http://shineli.com/</id>
+  <author>
+    <name><![CDATA[李鑫]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Assignments of Week 1:Functions&amp;Evaluations]]></title>
+    <link href="http://shineli.com/blog/2014/04/29/assignments-of-week-1-functions-and-evaluations/"/>
+    <updated>2014-04-29T16:10:36+08:00</updated>
+    <id>http://shineli.com/blog/2014/04/29/assignments-of-week-1-functions-and-evaluations</id>
+    <content type="html"><![CDATA[<p>函数式编程一直想去了解，同时coursera课程报了很多，却都没有仔细去读和做练习。正好"Functional Programming Principles in Scala"开课了………
+一切又重头开始了，希望这次可以坚持下来，拿到一个不同的结尾~</p>
+
+<h2>概览</h2>
+
+<p>本周的作业有三个练习题：Pascal’s Triangle、Parentheses Balancing以及Counting Change，均是关于递归的练习，其中如何<em><em>划分子问题</em></em>以及<em><em>终结条件</em></em>是关键点。
+算法还是要加强啊~~~~</p>
+
+<!--more-->
+
+
+<h2>Pascal’s Triangle</h2>
+
+<p>题目：The following pattern of numbers is called Pascal’s triangle.
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>1
+</span><span class='line'>1 1
+</span><span class='line'>1 2 1
+</span><span class='line'>1 3 3 1
+</span><span class='line'>1 4 6 4 1
+</span><span class='line'>&hellip;</span></code></pre></td></tr></table></div></figure></notextile></div>
+Do this exercise by implementing the pascal function in Main.scala, which takes a column c and a row r, counting from 0 and returns the number at that spot in the triangle. For example, pascal(0,2)=1, pascal(1,2)=2 and pascal(1,3)=3.</p>
+
+<p>这道题目很简单，就是打印杨辉三角而已，代码如下：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">def</span> <span class="n">pascal</span><span class="o">(</span><span class="n">c</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">r</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">{&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">if</span> <span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">c</span> <span class="o">==</span> <span class="n">r</span><span class="o">)</span> <span class="c1">//cover the edge number</span>
+</span><span class='line'>  <span class="mi">1</span>
+</span><span class='line'><span class="k">else</span>
+</span><span class='line'>  <span class="n">pascal</span><span class="o">(</span><span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="n">pascal</span><span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Parentheses Balancing</h2>
+
+<p>题目：Write a recursive function which verifies the balancing of parentheses in a string, which we represent as a List[Char] not a String.
+For example, the function should return <strong>true</strong> for the following strings:</p>
+
+<pre><code>(if (zero? x) max (/ 1 x))、
+I told him (that it’s not (yet) done). (But he wasn’t listening)
+</code></pre>
+
+<p>The function should return <strong>false</strong> for the following strings:</p>
+
+<pre><code>:-)
+())(
+</code></pre>
+
+<p>这个题目一开始想的比较麻烦，后来感觉只要匹配括号的数量，同时右括号的数量不能大于左边括号的数量即可,代码如下：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">def</span> <span class="n">balance</span><span class="o">(</span><span class="n">chars</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Char</span><span class="o">])</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="o">{&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">def</span> <span class="n">isBalance</span><span class="o">(</span><span class="n">left</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">right</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">sub</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Char</span><span class="o">])</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="o">(</span><span class="n">right</span> <span class="o">&amp;</span><span class="n">gt</span><span class="o">;</span> <span class="n">left</span><span class="o">)</span>
+</span><span class='line'>    <span class="kc">false</span>
+</span><span class='line'>  <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">sub</span><span class="o">.</span><span class="n">isEmpty</span><span class="o">)</span>
+</span><span class='line'>    <span class="n">left</span> <span class="o">==</span> <span class="n">right</span>
+</span><span class='line'>  <span class="k">else</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">sub</span><span class="o">.</span><span class="n">head</span> <span class="o">==</span> <span class="sc">&#39;(&#39;</span><span class="o">)</span>
+</span><span class='line'>      <span class="n">isBalance</span><span class="o">(</span><span class="n">left</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">right</span><span class="o">,</span> <span class="n">sub</span><span class="o">.</span><span class="n">tail</span><span class="o">)</span>
+</span><span class='line'>    <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">sub</span><span class="o">.</span><span class="n">head</span> <span class="o">==</span> <span class="sc">&#39;)&#39;</span><span class="o">)</span>
+</span><span class='line'>      <span class="n">isBalance</span><span class="o">(</span><span class="n">left</span><span class="o">,</span> <span class="n">right</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">sub</span><span class="o">.</span><span class="n">tail</span><span class="o">)</span>
+</span><span class='line'>    <span class="k">else</span>
+</span><span class='line'>      <span class="n">isBalance</span><span class="o">(</span><span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">,</span> <span class="n">sub</span><span class="o">.</span><span class="n">tail</span><span class="o">)</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">isBalance</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">chars</span><span class="o">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>终止条件在一开始遗漏了left > right的情况（好吧，我也不知道为什么会范这个错误）即最初代码如下：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">if</span><span class="o">(</span><span class="n">left</span> <span class="o">==</span> <span class="n">right</span> <span class="o">&amp;</span><span class="n">amp</span><span class="o">;&amp;</span><span class="n">amp</span><span class="o">;</span> <span class="n">sub</span><span class="o">.</span><span class="n">isEmpty</span><span class="o">)&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kc">true</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Counting Change</h2>
+
+<p>题目：Write a recursive function that counts how many different ways you can make change for an amount, given a list of coin denominations. For example, there are 3 ways to give change for 4 if you have coins with denomiation 1 and 2: 1+1+1+1, 1+1+2, 2+2.</p>
+
+<p>思路：假设总共的change的数量为money，coin列表为A，B，C，则用coin去表示change的情况可以分为：不含A的组合 + 含A的组合，而含A的组合等价于money &ndash; A用coin表示的情况</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">def</span> <span class="n">countChange</span><span class="o">(</span><span class="n">money</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">coins</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">{&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">if</span> <span class="o">(</span><span class="n">money</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="mi">1</span>
+</span><span class='line'><span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">coins</span><span class="o">.</span><span class="n">isEmpty</span><span class="o">)</span> <span class="mi">0</span>
+</span><span class='line'><span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">money</span> <span class="o">&amp;</span><span class="n">lt</span><span class="o">;</span> <span class="mi">0</span><span class="o">)</span> <span class="mi">0</span>
+</span><span class='line'><span class="k">else</span>
+</span><span class='line'>  <span class="n">countChange</span><span class="o">(</span><span class="n">money</span><span class="o">,</span> <span class="n">coins</span><span class="o">.</span><span class="n">tail</span><span class="o">)</span> <span class="o">+</span> <span class="n">countChange</span><span class="o">(</span><span class="n">money</span> <span class="o">-</span> <span class="n">coins</span><span class="o">.</span><span class="n">head</span><span class="o">,</span> <span class="n">coins</span><span class="o">)</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>

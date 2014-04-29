@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Octopress - Shine's Blog</title>
+  <title>Markdown&amp;ocotopress语法说明 - Shine's Blog</title>
   <meta name="author" content="李鑫">
 
   
-  <meta name="description" content="Category: octopress">
+  <meta name="description" content="markdown的语法简单查看了一下，的确不是很复杂，怪不得大家写blog喜欢用，这里简单记录一些常用的，方便自己查看~~ markdown 语法 标题 # 一级标题 # ## 二级标题 ## ###### 依次类推，最高到6级标题 ######
+无序列表 分类1
+分类2
+分类3 区块的例子， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://shineli.comblog/categories/octopress">
+  <link rel="canonical" href="http://shineli.com/blog/2014/04/23/markdown-and-ocotopressyu-fa-shuo-ming">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Shine's Blog" type="application/atom+xml">
@@ -67,35 +70,164 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Octopress</h1>
+    
+      <h1 class="entry-title">Markdown&amp;ocotopress语法说明</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-23T16:47:08+08:00" pubdate data-updated="true">Apr 23<span>rd</span>, 2014</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>markdown的语法简单查看了一下，的确不是很复杂，怪不得大家写blog喜欢用，这里简单记录一些常用的，方便自己查看~~</p>
 
-  
-  <h2>2014</h2>
+<h2>markdown 语法</h2>
 
-<article>
-  
-<h1><a href="/blog/2014/04/23/markdown-and-ocotopressyu-fa-shuo-ming/">Markdown&amp;ocotopress语法说明</a></h1>
-<time datetime="2014-04-23T16:47:08+08:00" pubdate><span class='month'>Apr</span> <span class='day'>23</span> <span class='year'>2014</span></time>
+<ol>
+<li><p>标题
+ # 一级标题 #
+ ## 二级标题 ##
+ ###### 依次类推，最高到6级标题 ######</p></li>
+<li><p>无序列表</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/markdown/'>markdown</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
-</footer>
+<ul>
+<li>分类1</li>
+<li>分类2</li>
+<li>分类3</li>
+</ul>
+</li>
+<li><p>区块的例子，作为引用存在</p>
+
+<blockquote><p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p></blockquote></li>
+</ol>
 
 
-</article>
+<!--more-->
 
+
+<ol>
+<li><p>链接</p>
+
+<p> This is <a href="http://example.com/" title="Title">an example</a> inline link.</p>
+
+<p> <a href="http://example.com/">http://example.com/</a></p></li>
+<li><p>强调</p>
+
+<p> <em>single asterisks</em>
+ <em>single underscores</em></p>
+
+<p> <strong>double asterisks</strong>
+ <strong>double underscores</strong></p></li>
+</ol>
+
+
+<h2>octopress语法</h2>
+
+<ol>
+<li>代码</li>
+</ol>
+
+
+<p><code></p>
+
+<pre><code>选项：[lang:language] [title] [url] [link text] [start:#] [mark:#,#-#] [linenos:false]
+</code></pre>
+
+<p></code></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'>  <span class="nb">phpinfo</span><span class="p">();</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>图片</li>
+</ol>
+
+
+<p><code></p>
+
+<pre><code>语法：&lt;img class="[class names]" src="/path/to/image" title="[width] [height] [title text [alt text]]" &gt;
+</code></pre>
+
+<p></code></p>
+
+<p><img src="http://placekitten.com/890/280">
+<img class="left" src="http://placekitten.com/320/250" title="Place Kitten #2" >
+<img class="right" src="http://placekitten.com/300/500" width="150" height="250" title="Place Kitten #3" >
+<img class="right" src="http://placekitten.com/300/500" width="150" height="250" title="Place Kitten #4" alt="An image of a very cute kitten"></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">李鑫</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-23T16:47:08+08:00" pubdate data-updated="true">Apr 23<span>rd</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/markdown/'>markdown</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/04/29/assignments-of-week-1-functions-and-evaluations/" title="Next Post: Assignments of Week 1:Functions&amp;Evaluations">Assignments of Week 1:Functions&amp;Evaluations &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>
