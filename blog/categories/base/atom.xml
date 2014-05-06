@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Base | Shine's Blog]]></title>
   <link href="http://shineli.com/blog/categories/base/atom.xml" rel="self"/>
   <link href="http://shineli.com/"/>
-  <updated>2014-05-06T14:56:57+08:00</updated>
+  <updated>2014-05-06T15:00:38+08:00</updated>
   <id>http://shineli.com/</id>
   <author>
     <name><![CDATA[李鑫]]></name>
@@ -24,7 +24,7 @@
 <p>由于只读代码的话，印象不是很深刻；因此，在阅读过后，会根据自己的理解来模仿Yii2.0写一个试验性的框架。
 地址：<a href="https://github.com/baidushine/shf">https://github.com/baidushine/shf</a></p>
 
-<h1>Base包</h1>
+<h2>Base包</h2>
 
 <p>Yii框架的核心在于Base包，其他都是基于Base包进行的组件式开发。</p>
 
