@@ -2,13 +2,21 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://shineli.com/blog/2014/04/23/markdown-and-ocotopressyu-fa-shuo-ming/</loc>
-        <lastmod>2014-04-29T18:03:18+08:00</lastmod>
+        <lastmod>2014-05-06T11:13:31+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://shineli.com/blog/2014/04/29/assignments-of-week-1-functions-and-evaluations/
         </loc>
-        <lastmod>2014-04-29T17:18:31+08:00</lastmod>
+        <lastmod>2014-05-06T11:13:44+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://shineli.com/blog/2014/05/06/yuan-ma-jie-xi/</loc>
+        <lastmod>2014-05-06T14:56:57+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://shineli.com/blog/2014/05/06/phpmo-zhu-fang-fa/</loc>
+        <lastmod>2014-05-06T14:20:41+08:00</lastmod>
     </url>
     <url>
         <loc>http://shineli.com/about/</loc>
@@ -16,11 +24,11 @@
     </url>
     <url>
         <loc>http://shineli.com/blog/archives/</loc>
-        <lastmod>2014-04-29T18:03:18+08:00</lastmod>
+        <lastmod>2014-05-06T14:56:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://shineli.com/</loc>
-        <lastmod>2014-04-29T18:03:18+08:00</lastmod>
+        <lastmod>2014-05-06T14:56:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://shineli.com/robots.txt</loc>

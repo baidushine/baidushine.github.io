@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: PHP | Shine's Blog]]></title>
+  <link href="http://shineli.com/blog/categories/php/atom.xml" rel="self"/>
+  <link href="http://shineli.com/"/>
+  <updated>2014-05-06T14:56:57+08:00</updated>
+  <id>http://shineli.com/</id>
+  <author>
+    <name><![CDATA[李鑫]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[PHP魔术方法]]></title>
+    <link href="http://shineli.com/blog/2014/05/06/phpmo-zhu-fang-fa/"/>
+    <updated>2014-05-06T14:20:30+08:00</updated>
+    <id>http://shineli.com/blog/2014/05/06/phpmo-zhu-fang-fa</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Yii 2.0源码解析_Base包]]></title>
+    <link href="http://shineli.com/blog/2014/05/06/yuan-ma-jie-xi/"/>
+    <updated>2014-05-06T10:51:09+08:00</updated>
+    <id>http://shineli.com/blog/2014/05/06/yuan-ma-jie-xi</id>
+    <content type="html"><![CDATA[<p>命运有时真的挺奇怪的，从实习开始阴差阳错的被分配到现在的小组，从头开始学习了PHP，期间一直在用CakePHP和Yii Framework。二者优劣暂且不表，尽管中间也陆陆续续的读过这两个框架的一些源码，却始终没有坚持下来。
+恰逢Yii2.0即将发布，也想仔细阅读下相关源码来加深对于PHP以及MVC框架的一些理解。</p>
+
+<p>由于只读代码的话，印象不是很深刻；因此，在阅读过后，会根据自己的理解来模仿Yii2.0写一个试验性的框架。
+地址：<a href="https://github.com/baidushine/shf">https://github.com/baidushine/shf</a></p>
+
+<h1>Base包</h1>
+
+<p>Yii框架的核心在于Base包，其他都是基于Base包进行的组件式开发。</p>
+
+<!--more-->
+
+
+<h3>1. 类图</h3>
+
+<!-- 类图 -->
+
+
+<h3>2. 核心类</h3>
+
+<h5>2.1 Compoment：实现event和behavior的基类</h5>
+
+<ul>
+<li>event
+
+<blockquote><p>Event is a way to &ldquo;inject&rdquo; custom code into existing code at certain places. For example, a comment object can trigger
+an &ldquo;add&rdquo; event when the user adds a comment. We can write custom code and attach it to this event so that when the event
+is triggered (i.e. comment will be added), our custom code will be executed.</p></blockquote></li>
+</ul>
+
+
+<p>~~~待完成</p>
+
+<ul>
+<li>behavior</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
