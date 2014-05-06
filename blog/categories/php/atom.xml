@@ -4,7 +4,7 @@
   <title><![CDATA[Category: PHP | Shine's Blog]]></title>
   <link href="http://shineli.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://shineli.com/"/>
-  <updated>2014-05-06T15:00:38+08:00</updated>
+  <updated>2014-05-06T16:30:22+08:00</updated>
   <id>http://shineli.com/</id>
   <author>
     <name><![CDATA[李鑫]]></name>
@@ -58,7 +58,15 @@ is triggered (i.e. comment will be added), our custom code will be executed.</p>
 </ul>
 
 
-<p>~~~待完成</p>
+<p>其实，事件模型是设计模式中的“观察者模式”，即当对象状态发生了变化，那么该对象可以将事件通知其他对象。
+为了使用事件模型，需要实现如下三个步骤：</p>
+
+<pre><code>1) 定义事件
+2) 注册事件以及相应事件的处理
+3) 触发事件
+</code></pre>
+
+<p>如上所说，event有两个重要角色：event和event handler，其中，event代表事情发生，而handler则代表相应的处理。</p>
 
 <ul>
 <li>behavior</li>
