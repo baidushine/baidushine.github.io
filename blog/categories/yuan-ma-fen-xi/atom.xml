@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 源码分析 | Shine's Blog]]></title>
+  <link href="http://shineli.com/blog/categories/yuan-ma-fen-xi/atom.xml" rel="self"/>
+  <link href="http://shineli.com/"/>
+  <updated>2014-07-16T10:48:46+08:00</updated>
+  <id>http://shineli.com/</id>
+  <author>
+    <name><![CDATA[李鑫]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Yii的Event和Behavior]]></title>
+    <link href="http://shineli.com/blog/2014/05/09/yiide-eventhe-behavior/"/>
+    <updated>2014-05-09T15:03:15+08:00</updated>
+    <id>http://shineli.com/blog/2014/05/09/yiide-eventhe-behavior</id>
+    <content type="html"><![CDATA[<p>命运有时真的挺奇怪的，从实习开始阴差阳错的被分配到现在的小组，从头开始学习了PHP，期间一直在用CakePHP和Yii Framework。二者优劣暂且不表，尽管中间也陆陆续续的读过这两个框架的一些源码，却始终没有坚持下来。
+恰逢Yii2.0即将发布，也想仔细阅读下相关源码来加深对于PHP以及MVC框架的一些理解。</p>
+
+<p>由于只读代码的话，印象不是很深刻；因此，在阅读过后，会根据自己的理解来模仿Yii2.0写一个试验性的框架。
+地址：<a href="https://github.com/baidushine/shf">https://github.com/baidushine/shf</a></p>
+
+<p>Yii的</p>
+
+<h3>Property</h3>
+
+<h3>Event</h3>
+
+<h3>Behavior</h3>
+]]></content>
+  </entry>
+  
+</feed>

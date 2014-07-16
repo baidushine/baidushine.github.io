@@ -4,7 +4,7 @@
   <title><![CDATA[Shine's Blog]]></title>
   <link href="http://shineli.com/atom.xml" rel="self"/>
   <link href="http://shineli.com/"/>
-  <updated>2014-05-06T19:23:34+08:00</updated>
+  <updated>2014-07-16T10:48:46+08:00</updated>
   <id>http://shineli.com/</id>
   <author>
     <name><![CDATA[李鑫]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[2014年下半年计划]]></title>
+    <link href="http://shineli.com/blog/2014/07/16/2014nian-xia-ban-nian-ji-hua/"/>
+    <updated>2014-07-16T10:31:26+08:00</updated>
+    <id>http://shineli.com/blog/2014/07/16/2014nian-xia-ban-nian-ji-hua</id>
+    <content type="html"><![CDATA[<p>2014年就在不知不觉的时候过去了一半，晋升的欣喜以及跟腱断裂的痛苦使得过去的半年过的混混沌沌。
+尽管下半年已经过去了15天，但是开始去做总比老想着去做好~~</p>
+
+<blockquote><p>Just Do It！！！</p></blockquote>
+
+<p>以下是制定的相关计划脑图，感觉有点多和难，不过慢慢来吧~~~</p>
+
+<p><embed src="http://shineli.com/images/2014_plan.swf" quality=high width="100%" height="800px"  wmode=transparent type='application/x-shockwave-flash'></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Yii的Event和Behavior]]></title>
+    <link href="http://shineli.com/blog/2014/05/09/yiide-eventhe-behavior/"/>
+    <updated>2014-05-09T15:03:15+08:00</updated>
+    <id>http://shineli.com/blog/2014/05/09/yiide-eventhe-behavior</id>
+    <content type="html"><![CDATA[<p>命运有时真的挺奇怪的，从实习开始阴差阳错的被分配到现在的小组，从头开始学习了PHP，期间一直在用CakePHP和Yii Framework。二者优劣暂且不表，尽管中间也陆陆续续的读过这两个框架的一些源码，却始终没有坚持下来。
+恰逢Yii2.0即将发布，也想仔细阅读下相关源码来加深对于PHP以及MVC框架的一些理解。</p>
+
+<p>由于只读代码的话，印象不是很深刻；因此，在阅读过后，会根据自己的理解来模仿Yii2.0写一个试验性的框架。
+地址：<a href="https://github.com/baidushine/shf">https://github.com/baidushine/shf</a></p>
+
+<p>Yii的</p>
+
+<h3>Property</h3>
+
+<h3>Event</h3>
+
+<h3>Behavior</h3>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[自我驱动与驱动他人]]></title>
@@ -54,59 +91,6 @@ RD作为PM的资源，PM要合理利用，而不是提出需求就一副高高�
 <p>用下面的话自勉：</p>
 
 <blockquote><p>驱动他人是很难的，因此，自我驱动才是核心。比别人爬的高，才会看的远~</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Yii 2.0源码解析_Base包]]></title>
-    <link href="http://shineli.com/blog/2014/05/06/yuan-ma-jie-xi/"/>
-    <updated>2014-05-06T10:51:09+08:00</updated>
-    <id>http://shineli.com/blog/2014/05/06/yuan-ma-jie-xi</id>
-    <content type="html"><![CDATA[<p>命运有时真的挺奇怪的，从实习开始阴差阳错的被分配到现在的小组，从头开始学习了PHP，期间一直在用CakePHP和Yii Framework。二者优劣暂且不表，尽管中间也陆陆续续的读过这两个框架的一些源码，却始终没有坚持下来。
-恰逢Yii2.0即将发布，也想仔细阅读下相关源码来加深对于PHP以及MVC框架的一些理解。</p>
-
-<p>由于只读代码的话，印象不是很深刻；因此，在阅读过后，会根据自己的理解来模仿Yii2.0写一个试验性的框架。
-地址：<a href="https://github.com/baidushine/shf">https://github.com/baidushine/shf</a></p>
-
-<h2>Base包</h2>
-
-<p>Yii框架的核心在于Base包，其他都是基于Base包进行的组件式开发。</p>
-
-<!--more-->
-
-
-<h3>1. 类图</h3>
-
-<!-- 类图 -->
-
-
-<h3>2. 核心类</h3>
-
-<h5>2.1 Compoment：实现event和behavior的基类</h5>
-
-<ul>
-<li>event
-
-<blockquote><p>Event is a way to &ldquo;inject&rdquo; custom code into existing code at certain places. For example, a comment object can trigger
-an &ldquo;add&rdquo; event when the user adds a comment. We can write custom code and attach it to this event so that when the event
-is triggered (i.e. comment will be added), our custom code will be executed.</p></blockquote></li>
-</ul>
-
-
-<p>其实，事件模型是设计模式中的“观察者模式”，即当对象状态发生了变化，那么该对象可以将事件通知其他对象。
-为了使用事件模型，需要实现如下三个步骤：</p>
-
-<pre><code>1) 定义事件
-2) 注册事件以及相应事件的处理
-3) 触发事件
-</code></pre>
-
-<p>如上所说，event有两个重要角色：event和event handler，其中，event代表事情发生，而handler则代表相应的处理。</p>
-
-<ul>
-<li>behavior</li>
-</ul>
-
 ]]></content>
   </entry>
   
