@@ -4,7 +4,7 @@
   <title><![CDATA[Shine's Blog]]></title>
   <link href="http://shineli.com/atom.xml" rel="self"/>
   <link href="http://shineli.com/"/>
-  <updated>2014-07-16T10:48:46+08:00</updated>
+  <updated>2014-07-18T11:19:53+08:00</updated>
   <id>http://shineli.com/</id>
   <author>
     <name><![CDATA[李鑫]]></name>
@@ -12,6 +12,67 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[PHP开启扩展选项]]></title>
+    <link href="http://shineli.com/blog/2014/07/18/phpkai-qi-kuo-zhan-xuan-xiang/"/>
+    <updated>2014-07-18T10:25:07+08:00</updated>
+    <id>http://shineli.com/blog/2014/07/18/phpkai-qi-kuo-zhan-xuan-xiang</id>
+    <content type="html"><![CDATA[<p>这两天在读《Advanced PHP Proramming》，感觉写的蛮不错的，遗憾的只是书有点老，很多新的PHP特性未涉及到。</p>
+
+<p>当然，这不是重点，重点在于：在读chapter5时发现Mac默认的PHP未开启pcntl模块，也就是无法进行多进程操作等。</p>
+
+<p>因此，这两天稍微折腾了一下，研究下了mac下面PHP扩展如何添加和开启。</p>
+
+<h2>PHP基本环境</h2>
+
+<h3>安装目录</h3>
+
+<p>macos下PHP默认是编译好的，目录地址为：/usr/lib/php，其目录结构是：</p>
+
+<pre><code>/usr/lib/php
+    |--build：编译路径？其实我也不知道是干嘛的~~
+    |--extensions:存放扩展so文件的
+    |--src：自己建的，用来存放php的相关源码，方便开启某些扩展
+</code></pre>
+
+<h3>配置php.ini</h3>
+
+<p>默认：/etc/php.ini;如果找不到的话，可以使用phpinfo()去查看~~</p>
+
+<h2>PHP开启pcntl扩展</h2>
+
+<h3>下载PHP源码文件</h3>
+
+<ol>
+<li>查看当前PHP的版本：php -v，如我的机器上是php 5.4.30</li>
+<li>下载PHP源码：cd /usr/lib/php/src &amp;&amp; wget <a href="http://cn2.php.net/distributions/php-5.4.30.tar.bz2">http://cn2.php.net/distributions/php-5.4.30.tar.bz2</a></li>
+<li>解压当前源码：bzip -d php-5.4.30.tar.bz2 &amp;&amp; tar xvf php-5.4.30.tar</li>
+</ol>
+
+
+<h3>开启扩展pcntl</h3>
+
+<ol>
+<li>找到pcntl扩展的源码：cd /usr/lib/php/src/php-5.4.30/ext/pcntl</li>
+<li>调用phpize：The phpize command is used to prepare the build environment for a PHP extension
+
+<ul>
+<li>侦测环境，即检测当前的PHP环境 以及 与当前目录环境的情况</li>
+<li>生成configure文件</li>
+</ul>
+</li>
+<li>调用configure：./configure &mdash;with-php-config=/Users/shine/homebrew/bin/php-config</li>
+<li>执行编译：make &amp;&amp; &amp;&amp; make test &amp;&amp; make install</li>
+</ol>
+
+
+<h3>检查是否开启</h3>
+
+<p>执行php phpinfo.php | grep pcntl，当发现有如下结果时，则代表开启成功
+<img src="http://shineli.com/images/post/php_pcntl.png"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2014年下半年计划]]></title>

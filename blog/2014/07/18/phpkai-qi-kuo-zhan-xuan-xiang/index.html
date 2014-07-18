@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: 源码分析 - Shine's Blog</title>
+  <title>PHP开启扩展选项 - Shine's Blog</title>
   <meta name="author" content="李鑫">
 
   
-  <meta name="description" content="Category: 源码分析">
+  <meta name="description" content="这两天在读《Advanced PHP Proramming》，感觉写的蛮不错的，遗憾的只是书有点老，很多新的PHP特性未涉及到。 当然，这不是重点，重点在于：在读chapter5时发现Mac默认的PHP未开启pcntl模块，也就是无法进行多进程操作等。 因此，这两天稍微折腾了一下， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://shineli.comblog/categories/yuan-ma-fen-xi">
+  <link rel="canonical" href="http://shineli.com/blog/2014/07/18/phpkai-qi-kuo-zhan-xuan-xiang">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Shine's Blog" type="application/atom+xml">
@@ -67,35 +67,128 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: 源码分析</h1>
+    
+      <h1 class="entry-title">PHP开启扩展选项</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-18T10:25:07+08:00" pubdate data-updated="true">Jul 18<span>th</span>, 2014</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>这两天在读《Advanced PHP Proramming》，感觉写的蛮不错的，遗憾的只是书有点老，很多新的PHP特性未涉及到。</p>
 
-  
-  <h2>2014</h2>
+<p>当然，这不是重点，重点在于：在读chapter5时发现Mac默认的PHP未开启pcntl模块，也就是无法进行多进程操作等。</p>
 
-<article>
-  
-<h1><a href="/blog/2014/05/09/yiide-eventhe-behavior/">Yii的Event和Behavior</a></h1>
-<time datetime="2014-05-09T15:03:15+08:00" pubdate><span class='month'>May</span> <span class='day'>09</span> <span class='year'>2014</span></time>
+<p>因此，这两天稍微折腾了一下，研究下了mac下面PHP扩展如何添加和开启。</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/yii2-dot-0/'>Yii2.0</a>, <a class='category' href='/blog/categories/yuan-ma-fen-xi/'>源码分析</a></span>
-</footer>
+<h2>PHP基本环境</h2>
+
+<h3>安装目录</h3>
+
+<p>macos下PHP默认是编译好的，目录地址为：/usr/lib/php，其目录结构是：</p>
+
+<pre><code>/usr/lib/php
+    |--build：编译路径？其实我也不知道是干嘛的~~
+    |--extensions:存放扩展so文件的
+    |--src：自己建的，用来存放php的相关源码，方便开启某些扩展
+</code></pre>
+
+<h3>配置php.ini</h3>
+
+<p>默认：/etc/php.ini;如果找不到的话，可以使用phpinfo()去查看~~</p>
+
+<h2>PHP开启pcntl扩展</h2>
+
+<h3>下载PHP源码文件</h3>
+
+<ol>
+<li>查看当前PHP的版本：php -v，如我的机器上是php 5.4.30</li>
+<li>下载PHP源码：cd /usr/lib/php/src &amp;&amp; wget <a href="http://cn2.php.net/distributions/php-5.4.30.tar.bz2">http://cn2.php.net/distributions/php-5.4.30.tar.bz2</a></li>
+<li>解压当前源码：bzip -d php-5.4.30.tar.bz2 &amp;&amp; tar xvf php-5.4.30.tar</li>
+</ol>
 
 
-</article>
+<h3>开启扩展pcntl</h3>
 
+<ol>
+<li>找到pcntl扩展的源码：cd /usr/lib/php/src/php-5.4.30/ext/pcntl</li>
+<li>调用phpize：The phpize command is used to prepare the build environment for a PHP extension
+
+<ul>
+<li>侦测环境，即检测当前的PHP环境 以及 与当前目录环境的情况</li>
+<li>生成configure文件</li>
+</ul>
+</li>
+<li>调用configure：./configure &mdash;with-php-config=/Users/shine/homebrew/bin/php-config</li>
+<li>执行编译：make &amp;&amp; &amp;&amp; make test &amp;&amp; make install</li>
+</ol>
+
+
+<h3>检查是否开启</h3>
+
+<p>执行php phpinfo.php | grep pcntl，当发现有如下结果时，则代表开启成功
+<img src="/images/post/php_pcntl.png"></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">李鑫</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-18T10:25:07+08:00" pubdate data-updated="true">Jul 18<span>th</span>, 2014</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/07/16/2014nian-xia-ban-nian-ji-hua/" title="Previous Post: 2014年下半年计划">&laquo; 2014年下半年计划</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>
