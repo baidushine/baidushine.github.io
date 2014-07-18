@@ -4,7 +4,7 @@
   <title><![CDATA[Shine's Blog]]></title>
   <link href="http://shineli.com/atom.xml" rel="self"/>
   <link href="http://shineli.com/"/>
-  <updated>2014-07-18T11:28:23+08:00</updated>
+  <updated>2014-07-18T11:35:50+08:00</updated>
   <id>http://shineli.com/</id>
   <author>
     <name><![CDATA[李鑫]]></name>
@@ -18,7 +18,7 @@
     <link href="http://shineli.com/blog/2014/07/18/phpkai-qi-kuo-zhan-xuan-xiang/"/>
     <updated>2014-07-18T10:25:07+08:00</updated>
     <id>http://shineli.com/blog/2014/07/18/phpkai-qi-kuo-zhan-xuan-xiang</id>
-    <content type="html"><![CDATA[<p>这两天在读《Advanced PHP Proramming》，感觉写的蛮不错的，遗憾的只是书有点老，很多新的PHP特性未涉及到。</p>
+    <content type="html"><![CDATA[<p>这两天在读《Advanced PHP Programming》，感觉写的蛮不错的，遗憾的只是书有点老，很多新的PHP特性未涉及到。</p>
 
 <p>当然，这不是重点，重点在于：在读chapter5时发现Mac默认的PHP未开启pcntl模块，也就是无法进行多进程操作等。</p>
 
